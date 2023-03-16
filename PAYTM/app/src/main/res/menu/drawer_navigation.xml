@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:shownIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_my_orders"
+            android:icon="@drawable/ic_shopping_basket"
+            android:title="My Order"/>
+        <item
+            android:id="@+id/passbook"
+            android:icon="@drawable/ic_content_paste"
+            android:title="Pasbook"/>
+        <item
+            android:id="@+id/remainder"
+            android:icon="@drawable/ic_payment"
+            android:title="Payment"/>
+        <item
+            android:id="@+id/creditScore"
+            android:icon="@drawable/ic_adjust"
+            android:title="CreditScore"/>
+        <item
+            android:id="@+id/fav"
+            android:icon="@drawable/ic_store"
+            android:title="Store"/>
+        <item
+            android:id="@+id/loyaltyCard"
+            android:icon="@drawable/ic_local_play"
+            android:title="Loyalty Cards"/>
+
+    </group>
+
+</menu>
