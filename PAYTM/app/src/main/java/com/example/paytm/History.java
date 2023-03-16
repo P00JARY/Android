@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,8 @@ public class History extends AppCompatActivity {
 
 
     public RecyclerView RV;
+    public TextView display,his;
+    public String data="";
 
     ArrayList<String> QR_data;
     ArrayList<String> ID;
@@ -25,9 +28,9 @@ public class History extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        RV=findViewById(R.id.RV);
-        QR_data=new ArrayList<>();
-        ID=new ArrayList<>();
+
+        display=findViewById(R.id.dataDisplay);
+
         db_manager=new MyDbManager(this);
     }
 
@@ -38,12 +41,14 @@ public class History extends AppCompatActivity {
         Cursor cursor=db_manager.Fetch();
        if(cursor.moveToFirst()){
            do{
-               ID.add(cursor.getString(cursor.getColumnIndexOrThrow(MyHelper.QR_ID)));
-               QR_data.add(cursor.getString(cursor.getColumnIndexOrThrow(MyHelper.QR_DATA)));
+               data=data + cursor.getString(cursor.getColumnIndexOrThrow(MyHelper.QR_ID))+" \t ";
+               data=data + cursor.getString(cursor.getColumnIndexOrThrow(MyHelper.QR_DATA))+" \n\n";
 
-               Log.e("VALUE : ",cursor.getString(cursor.getColumnIndexOrThrow(MyHelper.QR_ID)));
-               Log.e("VALUE : ",cursor.getString(cursor.getColumnIndexOrThrow(MyHelper.QR_DATA)));
            }while (cursor.moveToNext());
+           Log.e("Data From SQL :",data);
+           display.setText(data);
+
+
        }
        db_manager.close();
     }
