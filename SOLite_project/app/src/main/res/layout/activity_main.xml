@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/idUname"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20dp"
+        android:hint="Enter User name"
+        />
+
+    <EditText
+        android:id="@+id/idpass"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idUname"
+        android:layout_marginTop="20dp"
+        android:hint="Enter password"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/idID"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/idUname"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter the ID"
+        android:textColorHint="@color/black" />
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:id="@+id/idLL1"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/idpass"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:text="insert"
+            android:onClick="onInsert1"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:text="update"
+            android:onClick="onUpdate"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/idLL2"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/idLL1"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:text="delete"
+            android:layout_margin="10dp"
+            android:onClick="onDelete"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:text="GET"
+            android:layout_margin="10dp"
+            android:onClick="onGet"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
